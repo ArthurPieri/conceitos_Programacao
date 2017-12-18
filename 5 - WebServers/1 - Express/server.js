@@ -1,10 +1,29 @@
 const express = require('express')
 const hbs = require('hbs')
+const fs = require('fs')
 
 let app = express()
 
 let partials = hbs.registerPartials(__dirname + '/views/partials')
 let viewEngine = app.set('view engine', 'hbs')
+
+app.use((request, response, next) => {
+    let now = new Date().toString()
+    let log = `${now}: ${request.method} ${request.url}`
+
+    console.log(log)
+    fs.appendFile('server.log', log + '\n', (err) => {
+        if (err){
+            console.log ('Unable to append to server.log')
+        }
+    })
+    next();
+})
+
+/*let maintanance = app.use((request, response, next) => {
+    response.render('maintanance.hbs')
+})*/ 
+
 let public = app.use(express.static(__dirname + '/public'))
 
 hbs.registerHelper('getCurrentYear', () => {
@@ -41,6 +60,6 @@ let bad = app.get('/bad',(request, response) => {
 })
 
 
-app.listen(3000, () => {
+let port = app.listen(3000, () => {
     console.log('Server is up on port 3000')
 })
