@@ -1,11 +1,19 @@
 const express = require('express')
-const handlebar = require('hbs')
+const hbs = require('hbs')
 
 let app = express()
 
 let partials = hbs.registerPartials(__dirname + '/views/partials')
 let viewEngine = app.set('view engine', 'hbs')
 let public = app.use(express.static(__dirname + '/public'))
+
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear()
+})
+
+hbs.registerHelper('screamIt', (text) => {
+    return text.toUpperCase()
+})
 
 let home = app.get('/', (request, response) => {
     //    response.send('<h1>Hello Express!</h1>')
@@ -15,15 +23,13 @@ let home = app.get('/', (request, response) => {
         likes: [
             'Cinema',
             'Videogames'
-        ],
-        currentYear: new Date().getFullYear()
+        ]
     })
 })
 
 let about = app.get('/about', (request, response) => {
     response.render('about.hbs', {
-        pageTitle: 'About Page',
-        currentYear: new Date().getFullYear()
+        pageTitle: 'About Page'
     })
 })
 
