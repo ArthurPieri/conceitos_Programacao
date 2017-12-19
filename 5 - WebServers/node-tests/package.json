@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    //Searches for all the archives that and in .test.js
     "test": "mocha **/*.test.js",
-    //For cross-OS compatibility always use double quotes
     "test-watch": "nodemon --exec \"npm test\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "expect": "^1.20.2",
     "mocha": "^4.0.1"
   }
 }
