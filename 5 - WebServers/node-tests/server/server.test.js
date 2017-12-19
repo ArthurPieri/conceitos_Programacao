@@ -1,7 +1,7 @@
 const request = require('supertest')
 const expect = require('expect')
 
-let app = require('./server').app
+let app = require('./server.js').app
 
 it('Should return Hello world response', (done) => {
     request(app)
