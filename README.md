@@ -100,3 +100,9 @@ Desa forma o aplicativo vai ser executado em modo de Debug dentro do debug temos
 - repl -> permite manipular as informações de variáveis, verificar os valores das mesmas e etc
 
 o comando inspect pode ser utilizado em conjunto com o nodemon
+
+### Listando as notas
+
+### Como tornar argumentos obrigatórios
+
+### Arrow Functions
