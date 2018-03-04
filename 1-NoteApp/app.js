@@ -2,27 +2,31 @@ console.log('--------------------')
 
 const fs = require('fs')
 const _ = require('lodash')
+const yargs = require('yargs')
 
 const notes = require('./notes.js')
 
+const argv = yargs.argv
+
 let command = process.argv[2]
-console.log(command)
+console.log('Command: ',command)
+console.log('Yargs', argv)
 
 switch(command){
     default:
         console.log('Command not recognized')
         break
     case 'add':
-        console.log('Adding new Note')
+        notes.addNote(argv.title, argv.body)
         break
     case 'list':
-        console.log('Listing all notes')
+        notes.getAll()
         break
     case 'read':
-        console.log('Reading note')
+        notes.readNote(argv.title)
         break
     case 'remove':
-        console.log('Removing note')
+        notes.delNote(argv.title)
         break
 }
 
