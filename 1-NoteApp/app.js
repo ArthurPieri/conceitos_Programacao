@@ -17,7 +17,10 @@ switch(command){
         console.log('Command not recognized')
         break
     case 'add':
-        notes.addNote(argv.title, argv.body)
+        let note = notes.addNote(argv.title, argv.body)
+        if (note) {
+            console.log (`--- \n Note Saved \n Title: ${note.title} \n body: ${note.body} \n ---`)
+        }
         break
     case 'list':
         notes.getAll()
