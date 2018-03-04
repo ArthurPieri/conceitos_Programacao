@@ -2,10 +2,28 @@
 
 Começando os estudos de Node.js através do curso: https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/content
 
+## Módulo 0 (Node.js)
+
+### Como instalar o node (windows e Linux)
+
+### O que é node.js
+    Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (Chrome V8 ou simplesmente V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
+    O Node.js é: 
+    - event-driven 
+    - non-blocking
+    - single-threaded
+
+
+### Por que usar node?
+
+### Instalando vscode ou outro editor de texto
+
+### Hello World
+
 ## Módulo 1 (Note APP)
 Nessa seção começamos com o básico do Node e criando uma simples aplicação de notas
 
-### Require
+### require
 O comando ```require``` é utilizado para incluir novos módulos prontos ao seu código, por exemplo, o node possui alguns módulos prontos como o módulo ```cryto``` que pode ser utilizado dentro de seu código
 
 Outra utilidade para o comando ```require``` é o uso de arquivos criados por você, facilitando assim a separação do código, melhor organização das pastas e um código mais legível de um modo geral
