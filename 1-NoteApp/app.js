@@ -1,9 +1,36 @@
+console.log('------------------')
+
 const fs = require('fs')
 const _ = require('lodash')
 const yargs = require('yargs')
 const notes = require('./notes.js')
 
-const argv = yargs.argv
+const noteTitleOpt = {
+    describe: 'Title of note',
+    demand: true,
+    alias: 't'
+}
+
+const noteBodyOpt = {
+    describe: 'Body of note',
+    demand: true,
+    alias: 'b'
+}
+
+const argv = yargs
+    .command('add', 'Add a new note', {
+        title: noteTitleOpt,
+        body: noteBodyOpt
+    })
+    .command('list', 'List all notes')
+    .command('read', 'Read a note', {
+        title: noteTitleOpt
+    })
+    .command('remove', 'Remove a note', {
+        title: noteTitleOpt
+    })
+    .help()
+    .argv
 let command = process.argv[2]
 
 switch(command){
