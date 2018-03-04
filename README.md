@@ -13,7 +13,11 @@ node inspect app.js
 
 Desa forma o aplicativo vai ser executado em modo de Debug dentro do debug temos alguns comandos que podem ser utilizados:
 - n -> Vai para a próxima linha
-- c -> executa até o final do programa OU até encontrar uma flag ```js debugger ``` no código
+- c -> executa até o final do programa OU até encontrar uma flag 
+```js 
+debugger 
+```
+no código
 - repl -> permite manipular as informações de variáveis, verificar os valores das mesmas e etc
 
 o comando inspect pode ser utilizado em conjunto com o nodemon
