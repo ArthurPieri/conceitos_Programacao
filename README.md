@@ -7,7 +7,7 @@ Começando os estudos de Node.js através do curso: https://www.udemy.com/the-co
 ### Como instalar o node (windows e Linux)
 
 ### O que é node.js
-    Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (Chrome V8 ou simplesmente V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
+Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (Chrome V8 ou simplesmente V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
     O Node.js é: 
     - event-driven 
     - non-blocking
