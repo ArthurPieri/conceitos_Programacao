@@ -29,7 +29,9 @@ switch(command){
         notes.readNote(argv.title)
         break
     case 'remove':
-        notes.delNote(argv.title)
+        let noteRemoved = notes.delNote(argv.title)
+        let message = noteRemoved ? 'Note was removed' : 'Note not found'
+        console.log(message)
         break
 }
 

@@ -45,6 +45,8 @@ let delNote = (title) => {
     let notes = fetchNotes()
     let filteredNotes = notes.filter((notes) => notes.title !== title)
     saveNotes(filteredNotes)
+
+    return notes.length !== filteredNotes.length
 }
 
 module.exports = {
