@@ -1,5 +1,3 @@
-// Notes.js archive
-
 const fs = require('fs')
 
 let fetchNotes = () => {
@@ -34,7 +32,7 @@ let addNote = (title, body) => {
 }
 
 let getAll = () => {
-    console.log('Getting all notes')
+    return fetchNotes()
 }
 
 let readNote = (title) => {

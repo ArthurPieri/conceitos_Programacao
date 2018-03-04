@@ -1,16 +1,10 @@
-console.log('--------------------')
-
 const fs = require('fs')
 const _ = require('lodash')
 const yargs = require('yargs')
-
 const notes = require('./notes.js')
 
 const argv = yargs.argv
-
 let command = process.argv[2]
-console.log('Command: ',command)
-console.log('Yargs', argv)
 
 switch(command){
     default:
@@ -24,7 +18,9 @@ switch(command){
         }
         break
     case 'list':
-        notes.getAll()
+        let allNotes = notes.getAll()
+        console.log(`Printing ${allNotes.length} note(s)`)
+        allNotes.forEach((note) => notes.logNote(note))
         break
     case 'read':
         let readedNote = notes.readNote(argv.title)
