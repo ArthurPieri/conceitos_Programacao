@@ -5,13 +5,13 @@ const fs = require('fs')
 let fetchNotes = () => {
     try {
         let notesString = fs.readFileSync('notes-data.json')
-        return notes = JSON.parse(notesString)    
+        return notesString = JSON.parse(notesString)    
     } catch (e) {
         return []
     }
 }
 
-let saveNotes = (title, body) => {
+let saveNotes = (notes) => {
     fs.writeFileSync('notes-data.json', JSON.stringify(notes))    
 }
 
@@ -42,7 +42,9 @@ let readNote = (title) => {
 }
 
 let delNote = (title) => {
-    console.log('Removing note', title)
+    let notes = fetchNotes()
+    let filteredNotes = notes.filter((notes) => notes.title !== title)
+    saveNotes(filteredNotes)
 }
 
 module.exports = {
