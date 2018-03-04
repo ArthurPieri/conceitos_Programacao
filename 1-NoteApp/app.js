@@ -19,14 +19,21 @@ switch(command){
     case 'add':
         let note = notes.addNote(argv.title, argv.body)
         if (note) {
-            console.log (`--- \n Note Saved \n Title: ${note.title} \n body: ${note.body} \n ---`)
+            console.log('Note Saved')
+            notes.logNote(note)
         }
         break
     case 'list':
         notes.getAll()
         break
     case 'read':
-        notes.readNote(argv.title)
+        let readedNote = notes.readNote(argv.title)
+        if (readedNote) {
+            console.log('Note Found')
+            notes.logNote(readedNote)
+        } else {
+            console.log('Note not found')
+        }
         break
     case 'remove':
         let noteRemoved = notes.delNote(argv.title)
