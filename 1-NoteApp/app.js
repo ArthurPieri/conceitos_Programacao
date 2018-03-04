@@ -8,16 +8,22 @@ const notes = require('./notes.js')
 let command = process.argv[2]
 console.log(command)
 
-if (command === 'add') {
-    console.log('Adding new Note')
-} else if (command === 'list'){
-    console.log('Listing all notes')
-} else if (command === 'read'){
-    console.log('Reading note')
-} else if (command === 'remove'){
-    console.log('Removing Note')
-} else {
-    console.log('Command not recongnized')
+switch(command){
+    default:
+        console.log('Command not recognized')
+        break
+    case 'add':
+        console.log('Adding new Note')
+        break
+    case 'list':
+        console.log('Listing all notes')
+        break
+    case 'read':
+        console.log('Reading note')
+        break
+    case 'remove':
+        console.log('Removing note')
+        break
 }
 
 console.log('------------------')
