@@ -119,7 +119,9 @@ let user = {
         console.log(`Ola. Meu nome é ${this.name}`)
     }
 }
-output > SyntaxErro
+dizOla()
+//-------
+// output > SyntaxErro
 ```
 
 Uma forma de utilizar uma sintaxe parecida mas com o uso do this é através da declaração do ES6:
@@ -130,6 +132,9 @@ let user = {
         console.log(`Ola. Meu nome é ${this.name}`)
     }
 }
+dizOlaAlt()
+// -----
+// output> Ola. Meu nome é Nome
 ```
 Nesse caso, ao declarar um metodo para um objeto colocamos o nome do método seguido do parentesis e as chaves, sem a necessidade de colocar : após o nome do método
 
