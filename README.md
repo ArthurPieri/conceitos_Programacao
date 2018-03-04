@@ -101,8 +101,36 @@ Desa forma o aplicativo vai ser executado em modo de Debug dentro do debug temos
 
 o comando inspect pode ser utilizado em conjunto com o nodemon
 
+Para acessar o debugger via Chrome, basta iniciar o programa via:
+```js
+node --inspect-brk app.js
+```
+
 ### Listando as notas
 
 ### Como tornar argumentos obrigatórios
 
 ### Arrow Functions
+Arrow functions não bind o This, por isso qualquer função ou método definido como uma Arrow Function não pode fazer uso do this.
+```js
+let user = {
+    nome: 'Nome',
+    dizOla: () => {
+        console.log(`Ola. Meu nome é ${this.name}`)
+    }
+}
+output > SyntaxErro
+```
+
+Uma forma de utilizar uma sintaxe parecida mas com o uso do this é através da declaração do ES6:
+```js
+let user = {
+    nome: 'Nome',
+    dizOlaAlt () {
+        console.log(`Ola. Meu nome é ${this.name}`)
+    }
+}
+```
+Nesse caso, ao declarar um metodo para um objeto colocamos o nome do método seguido do parentesis e as chaves, sem a necessidade de colocar : após o nome do método
+
+Arrow functions também não binda o arguments command
