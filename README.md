@@ -56,9 +56,65 @@ module.exports = {
 }
 ```
 ### npm init 
+```bash
+$ npm init
+```
+Tem como função inciar os projetos em node que utilizam algum tipo de dependência do NPM por isso ele vai criar dois arquivos:
+- package.json
+- package-lock.json
 
+A função desses dois arquivos é manter um registro e controle de toda a *dependecy-tree* dos módulos utilizados em su programa
+
+Ao executar o comando ele vai perguntar uma série de questões para gerar corretamente o seu package.json (porém ele pode ser editado depois)
+
+Uma coisa interessante é que ele é estritamente aditivo, ou seja o comando não deleta nada do package.json a não ser em casos específicos
 
 ### npm install
+Ese comando instala um pacote e todos as suas dependências
+
+um "pacote" é:
+
+a) uma pasta contendo o programa descrito pelo arquivo: package.json
+b) um gzipped tarball contendo (a)
+c) uma url que leva para (b)
+d) um <name>@<version> que está publicado em um repositório que contém (c)
+e) um <name>@<tag> que aponta para (d)
+f) um <name> que possui uma versão 'latest' que satisfaz (e)
+g) uma <git remote url> que leva para (a)
+
+npm install (in package directory, no arguments):
+
+Install the dependencies in the local node_modules folder.
+
+In global mode (ie, with -g or --global appended to the command), it installs the current package context (ie, the current working directory) as a global package.
+
+By default, npm install will install all modules listed as dependencies in package.json.
+
+With the --production flag (or when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies.
+
+npm install saves any specified packages into dependencies by default. Additionally, you can control where and how they get saved with some additional flags:
+
+-P, --save-prod: Package will appear in your dependencies. This is the default unless -D or -O are present.
+
+-D, --save-dev: Package will appear in your devDependencies.
+
+-O, --save-optional: Package will appear in your optionalDependencies.
+
+--no-save: Prevents saving to dependencies.
+
+When using any of the above options to save dependencies to your package.json, there are two additional, optional flags:
+
+-E, --save-exact: Saved dependencies will be configured with an exact version rather than using npm's default semver range operator.
+
+-B, --save-bundle: Saved dependencies will also be added to your bundleDependencies list.
+
+npm install [<@scope>/]<name>@<version>:
+
+Install the specified version of the package. This will fail if the version has not been published to the registry.
+
+Example:
+
+    npm install sax@0.1.1
 
 
 ### Module lodash
@@ -139,3 +195,6 @@ dizOlaAlt()
 Nesse caso, ao declarar um metodo para um objeto colocamos o nome do método seguido do parentesis e as chaves, sem a necessidade de colocar : após o nome do método
 
 Arrow functions também não binda o arguments command
+
+# Referências
+- https://docs.npmjs.com
