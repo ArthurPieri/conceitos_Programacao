@@ -5,6 +5,9 @@ Começando os estudos de Node.js através do curso: https://www.udemy.com/the-co
 ## Módulo 0 (Node.js)
 
 ### Como instalar o node (windows e Linux)
+Para instalar o node você pode acessar:
+
+https://nodejs.org/en/
 
 ### O que é node.js
 Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (Chrome V8 ou simplesmente V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
@@ -15,8 +18,27 @@ Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome 
 
 
 ### Por que usar node?
+Node é uma plataforma extremamente versátil, criada para satisfazer as necessidades a nova internet
+
+Com cada vez mais dispositivos conectados e a transmissão de dados crescendo de maneira exponencial
+surgiu a necessidade de uma plataforma *lightweight* e capaz de lidar com uma grande quantidade de dados
+de maneira totalmente assincrona, garantindo a performance e a reposta as requisções que estão sendo feitas.
+
+Graças a sua flexibilidade e performance o node hoje é muito utilizado pelas maiores empresas do mundo
+aqui uma lista de empresas que utilizam node em seus produtos:
+- Netflix (https://www.youtube.com/watch?v=p74282nDMX8)
+- Uber (https://www.youtube.com/watch?v=ElI5QtUISWM)
+- Paypal (https://www.youtube.com/watch?v=-00ImeLt9ec)
+- Godaddy (https://www.youtube.com/watch?v=MtpGVP-Qs-k)
+- etc ...
+
 
 ### Instalando vscode ou outro editor de texto
+Fica a vontade para instalar o editor de texto que melhor te satisfazer, pessoalmente prefiro o VSCode
+para instala-lo basta acessar:
+
+- https://code.visualstudio.com
+
 
 ### Hello World
 
@@ -24,7 +46,7 @@ Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome 
 Nessa seção começamos com o básico do Node e criando uma simples aplicação de notas
 
 ### require
-O comando ```require``` é utilizado para incluir novos módulos prontos ao seu código, por exemplo, o node possui alguns módulos prontos como o módulo ```cryto``` que pode ser utilizado dentro de seu código
+O comando ```require``` é utilizado para incluir novos módulos prontos ao seu código, por exemplo, o node possui alguns módulos prontos como o módulo ```crypto``` que pode ser utilizado dentro de seu código
 
 Outra utilidade para o comando ```require``` é o uso de arquivos criados por você, facilitando assim a separação do código, melhor organização das pastas e um código mais legível de um modo geral
 
@@ -75,24 +97,27 @@ Ese comando instala um pacote e todos as suas dependências
 um "pacote" é:
 
 a) uma pasta contendo o programa descrito pelo arquivo: package.json
+
 b) um gzipped tarball contendo (a)
+
 c) uma url que leva para (b)
+
 d) um <name>@<version> que está publicado em um repositório que contém (c)
+
 e) um <name>@<tag> que aponta para (d)
+
 f) um <name> que possui uma versão 'latest' que satisfaz (e)
+
 g) uma <git remote url> que leva para (a)
 
-npm install (in package directory, no arguments):
+O comando `npm install` cria uma pasta chamada node_modules e instala todas as dependências descritas no package.json
+essa pasta é específica para cada projeto
 
-Install the dependencies in the local node_modules folder.
+Existe porém um comando utilizado para instalar um modulo na sua máquina como um todo:
+`npm install <package> -g` ou `npm install <package> --global`
+Mais a frente devemos entender a utilidade de instalar um pacote de maneira global
 
-In global mode (ie, with -g or --global appended to the command), it installs the current package context (ie, the current working directory) as a global package.
-
-By default, npm install will install all modules listed as dependencies in package.json.
-
-With the --production flag (or when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies.
-
-npm install saves any specified packages into dependencies by default. Additionally, you can control where and how they get saved with some additional flags:
+#### Outras flags
 
 -P, --save-prod: Package will appear in your dependencies. This is the default unless -D or -O are present.
 
@@ -102,20 +127,16 @@ npm install saves any specified packages into dependencies by default. Additiona
 
 --no-save: Prevents saving to dependencies.
 
-When using any of the above options to save dependencies to your package.json, there are two additional, optional flags:
+--sav: Package will appear in your dependencies
 
--E, --save-exact: Saved dependencies will be configured with an exact version rather than using npm's default semver range operator.
+#### npm install <name>@<version>:
 
--B, --save-bundle: Saved dependencies will also be added to your bundleDependencies list.
+Vocẽ também pode instalar uma versão específica do pacote desejado para isso basta utilizar o @<version>
 
-npm install [<@scope>/]<name>@<version>:
-
-Install the specified version of the package. This will fail if the version has not been published to the registry.
-
-Example:
-
-    npm install sax@0.1.1
-
+Exemplo:
+```    
+npm install sax@0.1.1
+```
 
 ### Module lodash
 
