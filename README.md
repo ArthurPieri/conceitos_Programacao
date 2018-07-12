@@ -188,7 +188,8 @@ node --inspect-brk app.js
 ### Como tornar argumentos obrigatórios
 
 ### Arrow Functions
-Arrow functions não bind o This, por isso qualquer função ou método definido como uma Arrow Function não pode fazer uso do this.
+Arrow Functions é uma nova implementação do ES6 que tem como objetivo facilitar a declaração de funções uma vez que você pode ignorar o uso de ```keywords```: ```function``` e ```return``` .
+Porém as AF não "vincula" o ```this```, por isso seu uso não é recomendado
 ```js
 let user = {
     nome: 'Nome',
@@ -200,13 +201,30 @@ dizOla()
 //-------
 // output > SyntaxErro
 ```
-
+#### Arrow function com uma expressão
+No caso de uma função que tem apenas uma expressão ela pode ser escrita da seguinte forma:
+```js
+let user = {
+    nome: 'Nome',
+    dizOla: () => console.log('Ola.')
+}
+```
+#### Arrow function com um parâmetro
+Caso a função possua apenas um parâmetro podemos utilizar a seguinte sintaxe:
+```js
+let user = {
+    nome: 'nome',
+    dizOla: nome => console.log(`Ola. ${nome}`)
+}
+```
+ 
+### ES6 function 
 Uma forma de utilizar uma sintaxe parecida mas com o uso do this é através da declaração do ES6:
 ```js
 let user = {
     nome: 'Nome',
     dizOlaAlt () {
-        console.log(`Ola. Meu nome é ${this.name}`)
+        console.log(`Ola. Meu nome é ${this.nome}`)
     }
 }
 dizOlaAlt()

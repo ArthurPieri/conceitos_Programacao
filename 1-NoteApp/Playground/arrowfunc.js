@@ -12,4 +12,5 @@ let user = {
     }
 }
 
+user.sayHi()
 user.sayHiAlt()
