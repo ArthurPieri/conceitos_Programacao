@@ -2,14 +2,14 @@
 
 Começando os estudos de Node.js através do curso: https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/content
 
-## Módulo 0 (Node.js)
+# Módulo 0 (Node.js)
 
-### Como instalar o node (windows e Linux)
+## Como instalar o node (windows e Linux)
 Para instalar o node você pode acessar:
 
 https://nodejs.org/en/
 
-### O que é node.js
+## O que é node.js
 Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (Chrome V8 ou simplesmente V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
     O Node.js é: 
     - event-driven 
@@ -17,7 +17,7 @@ Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome 
     - single-threaded
 
 
-### Por que usar node?
+## Por que usar node?
 Node é uma plataforma extremamente versátil, criada para satisfazer as necessidades a nova internet
 
 Com cada vez mais dispositivos conectados e a transmissão de dados crescendo de maneira exponencial
@@ -33,24 +33,24 @@ aqui uma lista de empresas que utilizam node em seus produtos:
 - etc ...
 
 
-### Instalando vscode ou outro editor de texto
+## Instalando vscode ou outro editor de texto
 Fica a vontade para instalar o editor de texto que melhor te satisfazer, pessoalmente prefiro o VSCode
 para instala-lo basta acessar:
 
 - https://code.visualstudio.com
 
 
-### Hello World
+## Hello World
 
-## Módulo 1 (Note APP)
+# Módulo 1 (Note APP)
 Nessa seção começamos com o básico do Node e criando uma simples aplicação de notas
 
-### require
+## require
 O comando ```require``` é utilizado para incluir novos módulos prontos ao seu código, por exemplo, o node possui alguns módulos prontos como o módulo ```crypto``` que pode ser utilizado dentro de seu código
 
 Outra utilidade para o comando ```require``` é o uso de arquivos criados por você, facilitando assim a separação do código, melhor organização das pastas e um código mais legível de um modo geral
 
-### module.exports
+## module.exports
 Vamos imaginar que você crie uma função para adicionar dois números na pasta matematica-basica/add.js:
 ```js
 let add = (num1, num2) => {
@@ -77,7 +77,7 @@ module.exports = {
     add
 }
 ```
-### npm init 
+## npm init 
 ```bash
 $ npm init
 ```
@@ -91,7 +91,7 @@ Ao executar o comando ele vai perguntar uma série de questões para gerar corre
 
 Uma coisa interessante é que ele é estritamente aditivo, ou seja o comando não deleta nada do package.json a não ser em casos específicos
 
-### npm install
+## npm install
 Ese comando instala um pacote e todos as suas dependências
 
 um "pacote" é:
@@ -117,7 +117,7 @@ Existe porém um comando utilizado para instalar um modulo na sua máquina como 
 `npm install <package> -g` ou `npm install <package> --global`
 Mais a frente devemos entender a utilidade de instalar um pacote de maneira global
 
-#### Outras flags
+### Outras flags
 
 -P, --save-prod: Package will appear in your dependencies. This is the default unless -D or -O are present.
 
@@ -129,7 +129,7 @@ Mais a frente devemos entender a utilidade de instalar um pacote de maneira glob
 
 --sav: Package will appear in your dependencies
 
-#### npm install <name>@<version>:
+### npm install <name>@<version>:
 
 Vocẽ também pode instalar uma versão específica do pacote desejado para isso basta utilizar o @<version>
 
@@ -138,12 +138,13 @@ Exemplo:
 npm install sax@0.1.1
 ```
 
-### Module lodash
+## Module lodash
 Lodash é uma biblioteca de JavaScript lançada inicialmente em 2012 e que continua ativa até hoje, tem como objetivo ajudar programadores a escrever um codigo mais conciso e faceis de manter.
 
 Ele pode ser dividido em várias áreas principais:
-#### Utilidades: para simplificar tarefas comuns como determinar tipos de variaveis e simplificar operações matemáticas
-#### Funções: 
+### Utilidades 
+para simplificar tarefas comuns como determinar tipos de variaveis e simplificar operações matemáticas
+### Funções: 
 Tem como objetivo simplificar: 
 - _binding_ ("Que seria uma amarração da função");
 - _decorating_ ("É um conceito um pouco mais complexo, mas que tem como objetivo ampliar o escopo de uma função por um breve periodo de tempo, uma função que tem como argumento outra função, por isso não vamos tratar sobre ele");
@@ -152,56 +153,56 @@ Tem como objetivo simplificar:
 - _Debouncing_ ("É um pouco diferente, é como se seu programa falasse: 'Só vou executar isso depois que todo o pedido for feito', mais ou menos como um garçom, que espera todos na mesa fazerem seus pedidos antes de leva-los até a cozinha");
 - _currying_ ("È uma forma de construir funções que permite a passagem de apenas uma parte dos argumentos e como retorno receber a uma função que está esperando o resto dos argumentos");
 - mudanças de ponteiros ("")
-#### Strings
+### Strings
 Funções de conversão para executar operações básicas com _strings_ como: 
 - _Trimming_ ("É uma das tarefas mais comuns tem como objetivo remover _whitespaces_ do incio e final de uma _string_");
 - Convertendo para _UPPERCASE_, _CamelCase_ e etc.
 
-#### Array
+### Array
 - _Creating_;
 - _Spliting_;
 - -Combining_;
 - _Modifying_;
 - _Compressing_.
 
-#### Objects
+### Objects
 - _Accessing_
 - _Extending_
 - _Merging_
 - _Defaults_
 - _Transforming_
 
-#### E mais...
+### E mais...
 ELe ainda pode lidar com:
 - _Collections_;
 - _Seq_;
 - ETC.
 
-### process.argv
+## process.argv
 
 
-### If/switch
+## If/switch
 
 
-### Module yargs
+## Module yargs
 
 
-### JSON
+## JSON
 
 
-### Salvando as notas para um arquivo
+## Salvando as notas para um arquivo
 
 
-### DRY - Don't Repeat Yourself ("Não se repita")
+## DRY - Don't Repeat Yourself ("Não se repita")
 
 
-### Deletando notas
+## Deletando notas
 
 
-### Lendo notas
+## Lendo notas
 
 
-### Debugger
+## Debugger
 O debugger é uma ferramenta muito interessante do node v8.0.0+ onde você pode acompanhar a execução do seu programa linha a linha. Para tal devemos executar a aplicação utilizando:
 ```bash
 node inspect app.js
@@ -219,11 +220,11 @@ Para acessar o debugger via Chrome, basta iniciar o programa via:
 node --inspect-brk app.js
 ```
 
-### Listando as notas
+## Listando as notas
 
-### Como tornar argumentos obrigatórios
+## Como tornar argumentos obrigatórios
 
-### Arrow Functions
+## Arrow Functions
 Arrow Functions é uma nova implementação do ES6 que tem como objetivo facilitar a declaração de funções uma vez que você pode ignorar o uso de ```keywords```: ```function``` e ```return``` .
 Porém as AF não "vincula" o ```this```, por isso seu uso não é recomendado
 ```js
@@ -237,7 +238,7 @@ dizOla()
 //-------
 // output > SyntaxErro
 ```
-#### Arrow function com uma expressão
+### Arrow function com uma expressão
 No caso de uma função que tem apenas uma expressão ela pode ser escrita da seguinte forma:
 ```js
 let user = {
@@ -245,7 +246,7 @@ let user = {
     dizOla: () => console.log('Ola.')
 }
 ```
-#### Arrow function com um parâmetro
+### Arrow function com um parâmetro
 Caso a função possua apenas um parâmetro podemos utilizar a seguinte sintaxe:
 ```js
 let user = {
@@ -254,7 +255,7 @@ let user = {
 }
 ```
  
-### ES6 function 
+## ES6 function 
 Uma forma de utilizar uma sintaxe parecida mas com o uso do this é através da declaração do ES6:
 ```js
 let user = {
