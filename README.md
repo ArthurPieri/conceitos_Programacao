@@ -257,12 +257,14 @@ Sua sintaxe básica utiliza 4 keywords:
 - ```case```  - aqui é declarado o resultado esperado da condicional 
 - ```break``` - indica do caso atual
 - ```default``` - indica o que será executado caso a condição não seja satisfeita
+
 Dessa forma a expressão é feita da seguinte forma:
 ```swtich``` (expressão) {
-    ```case``` valor1:
+    ```case``` valor1 :
     //Instruções a serem executadas
     ```break```;
 }
+
 vamos a um exemplo para facilitar:
 ```js
 let user = {
