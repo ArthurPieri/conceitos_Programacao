@@ -182,8 +182,115 @@ ELe ainda pode lidar com:
 
 
 ## If/switch
+### If
+Essas são as estruturas básicas de decisões dentro do JavaScript suas declarações funcionam da seguinte forma:
+```IF``` significa literalmente _se_ e ```else``` significa _se não_ ou seja o _if_ tem como forma básica:
+```if``` ( _a condição que deve ser satisfeita_ ){
+    _O código que será executado caso a condição seja satisfeita_
+}
+```else``` {
+    _o codigo que será executado caso a condição não seja satisfeita_
+}
 
+```js
+let user = {
+    nome: 'Arthur',
+    idade: 25
+}
+let user2 = {
+    nome: 'Jose',
+    idade: 17
+}
+let bar = (user) => {
+    if (user.idade < 18){
+        console.log('Não pode entrar')
+    }
+    else {
+        console.log('Bem vindo')
+    }
+}
+bar(user)
+bar(user2)
+//Output
+// Bem vindo
+// Não pode entrar
+```
 
+### Else if
+O comando ```else if``` é utilizado quando você possui mais do que apenas duas opções e deseja complementar a sua estrutura de decisão, _else if_ pode ser traduzido exatamente como: _se não se_ e com isso você pode somar várias chamadas diferentes como por exemplo:
+```js
+let user = {
+    nome: 'Arthur',
+    cidade: 'Brasilia'
+}
+let user2 = {
+    nome: 'Gustavo',
+    cidade: 'São Paulo'
+}
+let user3 = {
+    nome: 'Jose',
+    cidade: 'Campinas'
+}
+
+let cidade = (user) => {
+    if (user.cidade === 'Brasilia'){
+        console.log(`Olá ${user.nome} sua cidade é ${user.cidade}`)
+    } else if (user.cidade === 'São Paulo'){
+        console.log (`Olá ${user.nome} sua cidade é ${user.cidade}`)
+    } else {
+        console.log ('ué')
+    }
+}
+cidade(user)
+cidade(user2)
+cidade(user3)
+// Output
+// Olá Arthur sua cidade é Brasilia
+// Olá Gustavo sua cidade é São Paulo
+// ué
+```
+No exemplo acima utilizamos apenas uma chamada do ```else if```, claro que poderíamos continuara concatenando quantas chamadas fossem necessárias porem isso torna o código mais dificil de ler e afeta a performance do sistema, uma vez que eu preciso fazer um novo teste para cada nova declaração, por isso a medida que as opções aumentam o ideal é utilizar uma nova estrutura:
+### Switch
+A condicional *switch* avalia uma expressão combinando o valor da expressão para uma clausula ```case```, e executa as instruções associadas ao ```case```
+Sua sintaxe básica utiliza 4 keywords:
+- ```switch``` - aqui começa a chamada da expressão
+- ```case```  - aqui é declarado o resultado esperado da condicional 
+- ```break``` - indica do caso atual
+- ```default``` - indica o que será executado caso a condição não seja satisfeita
+Dessa forma a expressão é feita da seguinte forma:
+```swtich``` (expressão) {
+    ```case``` valor1:
+    //Instruções a serem executadas
+    ```break```;
+}
+vamos a um exemplo para facilitar:
+```js
+let user = {
+    nome: 'Arthur',
+    cidade: 'Brasília',
+}
+let dizOla = (user) => {
+    switch (user.cidade){
+        case 'São Paulo':
+        console.log('A cidade é Sampa')
+        break
+
+        case 'Florianópolis':
+        console.log('A cidade é Floripa')
+        break
+
+        case 'Salvador':
+        console.log('A cidade é Salvador')
+        break
+
+        default:
+        console.log('A cidade não foi encontrada') 
+    }
+}
+dizOla(user)
+```
+O que acontece se eu esquecer o ```break```?
+Nessa situação seu programa irá executar o caso correto e o caso seguinte até encontrar o próximo ```break```
 ## Module yargs
 
 
@@ -272,24 +379,3 @@ Nesse caso, ao declarar um metodo para um objeto colocamos o nome do método seg
 
 Arrow functions também não binda o arguments command
 
-# Referências
-- https://docs.npmjs.com
-- https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-- https://stackoverflow.com/questions/7190439/is-there-a-c-like-lambda-syntax-in-javascript
-- https://medium.com/@thejasonfile/es5-functions-vs-es6-fat-arrow-functions-864033baa1a
-- https://stackoverflow.com/questions/34361379/arrow-function-vs-function-declaration-expressions-are-they-equivalent-exch
-- https://en.wikipedia.org/wiki/Lodash
-- https://github.com/lodash/lodash
-- https://translate.google.com/
-- https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841
-- https://github.com/wycats/javascript-decorators
-- http://dealwithjs.io/design-patterns-decorating-in-javascript/
-- https://www.w3schools.com/js/js_validation_api.asp
-- https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
-- https://codeburst.io/throttling-and-debouncing-in-javascript-646d076d0a44
-- https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe
-- https://www.sitepoint.com/currying-in-functional-javascript/
-- https://www.sitepoint.com/trimming-strings-in-javascript/
-- https://gist.github.com/JoaoTiago/0724d2eb788f6382b39476e58d821300
-- https://www.w3schools.com/jsref/jsref_trim_string.asp
