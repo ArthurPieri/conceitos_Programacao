@@ -274,3 +274,8 @@ Arrow functions também não binda o arguments command
 
 # Referências
 - https://docs.npmjs.com
+- https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+- https://stackoverflow.com/questions/7190439/is-there-a-c-like-lambda-syntax-in-javascript
+- https://medium.com/@thejasonfile/es5-functions-vs-es6-fat-arrow-functions-864033baa1a
+- https://stackoverflow.com/questions/34361379/arrow-function-vs-function-declaration-expressions-are-they-equivalent-exch
