@@ -133,3 +133,21 @@ Exemplo:
 ```    
 npm install sax@0.1.1
 ```
+
+## Debugger
+O debugger é uma ferramenta muito interessante do node v8.0.0+ onde você pode acompanhar a execução do seu programa linha a linha. Para tal devemos executar a aplicação utilizando:
+```bash
+node inspect app.js
+```
+
+Desa forma o aplicativo vai ser executado em modo de Debug dentro do debug temos alguns comandos que podem ser utilizados:
+- n -> Vai para a próxima linha
+- c -> executa até o final do programa OU até encontrar uma flag ```debugger``` no código
+- repl -> permite manipular as informações de variáveis, verificar os valores das mesmas e etc
+
+o comando inspect pode ser utilizado em conjunto com o nodemon
+
+Para acessar o debugger via Chrome, basta iniciar o programa via:
+```js
+node --inspect-brk app.js
+```
