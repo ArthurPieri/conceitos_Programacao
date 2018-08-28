@@ -51,6 +51,7 @@ let removeNote = (title) => {
 module.exports = {
     addNote: addNote,
     //A mesma coisa que getAll : getAll
+    getAll,
     getNote,
     readNote,
     removeNote
