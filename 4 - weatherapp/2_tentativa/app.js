@@ -48,7 +48,7 @@ geocode.geocodeAddress(encodedAddress, (errorMessage, results) => {
             else {
                 console.log(` ${weatherResults.summary}`)
                 console.log(` Agora está: ${weatherResults.temperature} ºC`)
-                console.log(` Mas a sensção é de: ${weatherResults.apparentTemp} ºC`)
+                console.log(` Mas a sensação é de: ${weatherResults.apparentTemp} ºC`)
                 console.log('\n-------------------------------------------\n')
             }    
         })
