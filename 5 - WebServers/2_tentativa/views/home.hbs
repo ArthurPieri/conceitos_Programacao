@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <meta charset="utf-8">
-        <title>Some Website</title>
-    </header>
+    {{> head}}
     <body>
-            <h1>{{pageTitle}}</h1>
-            <p> {{welcomeMsg}} </p>
+        {{> header}}
+        <p> {{screamIt welcomeMsg}} </p>
 
-            <footer>
-                <p>
-                    Copyright {{currentYear}}
-                </p>
-            </footer>
+        {{> footer}}
     </body>
 </html>
