@@ -27,9 +27,9 @@ app.use((req, res, next) => {
 })
 
 /* Expresse middleware to maintenance mode comment if not needed */
-app.use((req, res, next) => [
-    res.render('maintenance.hbs')
-])
+// app.use((req, res, next) => [
+//     res.render('maintenance.hbs')
+// ])
 
 /* Using expresse to distribute the html files on /public folder */
 app.use(express.static(__dirname+'/public'))
@@ -50,6 +50,15 @@ app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Arthur Pieri',
         welcomeMsg: 'Well, Hello there'
+    })
+})
+
+/* Creating the Projects page */
+app.get('/projects', (req, res) => {
+    // res.send('<h1>Hello express!</h1> Its treason then')
+    res.render('projects.hbs', {
+        pageTitle: "Arthur Pieri's Projects",
+        welcomeMsg: "I'am the senate!"
     })
 })
 
