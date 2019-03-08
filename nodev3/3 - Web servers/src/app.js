@@ -1,31 +1,71 @@
 const path = require('path')
 const express = require('express')
+const hbs = require('hbs')
 
+// Seting express to app
 const app = express()
 
+// Define paths for Express config
 const publicFolder = path.join(__dirname, '../public')
+const viewsFolder = path.join(__dirname, '../templates/views')
+const partialsFolder = path.join(__dirname, '../templates/partials')
 
-// app.com
+// Handlebars (hbs) as the view engine and views location
+app.set('view engine', 'hbs')
+app.set('views', viewsFolder)
+hbs.registerPartials(partialsFolder)
+
+// Setting the public folder to express
 app.use(express.static(publicFolder))
 
-// app.com/help
-// app.get('/help', (req, res) => {
-//     res.send({
-//         name: 'Arthur',
-//         age: 26
-//     })
-// })
+// Home page
+app.get('', (req, res) => {
+    res.render('index', {
+        title: 'Weather',
+        name: 'Arthur Pieri'
+    })
+})
 
-// // app.com/about
-// app.get('/about', (req, res) => {
-//     res.send('<h1>About page</h1>')
-// })
+// About page
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'About pagen',
+        name: 'Arthur Pieri'
+    })
+})
+
+// Help page
+app.get('/help', (req, res) => {
+    res.render('help', {
+        title: 'Here is some help',
+        name: 'Arthur Pieri',
+        helpMsg: 'May our wives never become widows'
+    })
+})
 
 // app.com/Weather
 app.get('/weather', (req, res) => {
     res.send({
-        forecast: 'Chuvendo',
+        forecast: 'Chovendo',
         location: 'Casa do baralho'
+    })
+})
+
+// 404 help page
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: 'Page not found',
+        name: 'Arthur',
+        errorMsg: 'Help page not found'
+    })
+})
+
+// 404 page
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: 'Page not found',
+        name: 'Arthur',
+        errorMsg: 'Deu ruim irmão'
     })
 })
 
