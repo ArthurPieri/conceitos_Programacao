@@ -43,11 +43,29 @@ app.get('/help', (req, res) => {
     })
 })
 
-// app.com/Weather
+// app.com/Weather - Getting an address as a query string
 app.get('/weather', (req, res) => {
+    if(!req.query.address){
+        return res.send({
+            error: 'You must provide an address'
+        })
+    }
     res.send({
-        forecast: 'Chovendo',
-        location: 'Casa do baralho'
+        address: req.query.address,
+        location: 'Yo mamma',
+        forecast: 'is going down'
+    })
+})
+
+// Products page to learn how to use query strings
+app.get('/products', (req, res) => {
+    if (!req.query.search) {
+        return res.send({
+            error: 'You must provide a search term'
+        })
+    }
+    res.send({
+        products: []
     })
 })
 
