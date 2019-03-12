@@ -1,13 +1,13 @@
 {
   "name": "webserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "Weather app",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Arthur Pieri",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
