@@ -1,15 +1,14 @@
 {
-  "name": "4-taskmanager",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Arthur pieri",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.1.13",
-    "mongoose": "^5.4.19"
+    "request": "^2.88.0"
   }
 }
