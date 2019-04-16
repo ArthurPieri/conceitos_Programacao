@@ -1,5 +1,6 @@
 const express = require('express')
 const User = require('../models/users')
+const auth = require('../middleware/auth')
 const router = new express.Router()
 
 // Public
@@ -26,14 +27,20 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.get('/users', async (req, res) => {
-    try {
-        const users = await User.find({})
-        res.send(users)
-    }catch (e) {
-        res.status(500).send()
-    }
+router.get('/users/me', auth, async (req, res) => {
+    res.send(req.user)
 })
+
+// Must not be used since it exposes all other users
+// router.get('/users', auth, async (req, res) => {
+//     try {
+//         const users = await User.find({})
+//         res.send(users)
+//     }catch (e) {
+//         res.status(500).send()
+//     }
+    
+// })
 
 router.get('/users/:id', async (req, res) => {
     const _id = req.params.id
