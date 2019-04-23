@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node src.index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "env-cmd ./config/dev.env nodemon src/index.js"
   },
   "author": "Arthur pieri",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {
+    "env-cmd": "^8.0.2",
     "nodemon": "^1.18.10"
   }
 }
