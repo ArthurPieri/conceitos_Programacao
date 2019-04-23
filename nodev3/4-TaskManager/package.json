@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node src.index.js",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js",
-    "test": "jest"
+    "test": "env-cmd ./config/test.env jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "Arthur pieri",
   "license": "ISC",
@@ -24,6 +27,7 @@
   "devDependencies": {
     "env-cmd": "^8.0.2",
     "jest": "^24.7.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
   }
 }
