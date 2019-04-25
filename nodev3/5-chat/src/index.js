@@ -16,9 +16,17 @@ const publicFolder = path.join(__dirname,'../public')
 // Setting the public folder to express
 app.use(express.static(publicFolder))
 
-//
-io.on('connection', () => {
+// Starting Socket io connection
+io.on('connection', (socket) => {
     console.log('New Websocket connection')
+
+    socket.emit('Welcome', 'Welcome to the chat')
+    // socket.emit('countUpdated', count)
+
+    // socket.on('increment', () => {
+    //     count++
+    //     io.emit('countUpdated', count)
+    // })
 })
 
 // Starting up the server
