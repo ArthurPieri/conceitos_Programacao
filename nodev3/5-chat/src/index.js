@@ -2,6 +2,7 @@ const path = require('path')
 const http = require('http')
 const express = require('express')
 const socketio = require('socket.io')
+const Filter = require('bad-words')
 
 // Starting express
 const app = express()
@@ -21,12 +22,27 @@ io.on('connection', (socket) => {
     console.log('New Websocket connection')
 
     socket.emit('Welcome', 'Welcome to the chat')
-    // socket.emit('countUpdated', count)
+    socket.broadcast.emit('message', 'A new user has joined')
 
-    // socket.on('increment', () => {
-    //     count++
-    //     io.emit('countUpdated', count)
-    // })
+    socket.on('sendMessage', (message, callback) => {
+        const filter = new Filter()
+
+        if (filter.isProfane(message)) {
+            return callback('Profanity is not allowed')
+        }
+        
+        io.emit('message', message)
+        callback()
+    })
+
+    socket.on('sendLocation', (coords, cb) => {
+        io.emit('message', `https://google.com/maps?q=${coords.latitude},${coords.longitude}`)
+        cb()
+    })
+
+    socket.on('disconnect', () => {
+        io.emit('message', 'A user has left')
+    })
 })
 
 // Starting up the server
