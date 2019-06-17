@@ -26,14 +26,16 @@
                 
                 <form action="/livros" method="post">
 
-                    <div if(data.livro.id)>
+                    <div>
+                        <if(data.livro.id)>
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="id" value="${data.livro.id}">
+                        </if>
                     </div>
 
-                    <div class="form-group">
+                    <div class=`form-group`>
                         <label for="titulo">Titulo:</label>
-                        <input type="text" id="titulo" name="titulo" value="${data.livro.titulo}" placeholder="coloque o titulo" class="form-control"/>
+                        <input type="text" id="titulo" name="titulo" value="${data.livro.titulo}" placeholder=`coloque o titulo` class=`form-control`/>
                     </div>
                     <div class="form-group">
                         <label for="preco">Preço:</label>
