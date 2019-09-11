@@ -1,0 +1,10 @@
+numeros <- c(1, 2, 3, 4, 5)
+numeros
+mean(numeros)
+median(numeros)
+lista <- c(2, 3, 7, 8, 1, 3, 4, 8, 22, 67, 19)
+mean(lista)
+median(lista)
+shapiro.test(numeros)
+shapiro.test(lista)
+summary(lista)
