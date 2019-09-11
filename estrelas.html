@@ -11,10 +11,12 @@
         pulaLinha()
     }
 
-    let tabuada = prompt("Informe o número")
-
-    for(i = 1; i<=10; i++){
-        mostra(tabuada + ` vezes ${i} é ` + (tabuada * i))
+    for(linha = 1; linha <= 50; linha++){
+            //document.write(`${linha}.`)
+        for(coluna = 1; coluna <= linha; coluna++){
+            document.write("*")
+        }
+        pulaLinha()
     }
 
 </script>
