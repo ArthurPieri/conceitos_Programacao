@@ -336,6 +336,39 @@ dist_freq_quantitativas_personalizadas
 
 dist_freq_quantitativas_personalizadas.sort_index(ascending = False)
 
+"""Exercício 1"""
+
+classes = [dados.Altura.min(), 1.65, 1.75, dados.Altura.max()]
+labels = ['1 - Baixa', '2 - Média', '3 - Alta']
+
+frequencia = pd.value_counts(
+    pd.cut(
+        x = dados.Altura,
+        bins = classes,
+        labels = labels,
+        include_lowest = True
+    )
+)
+
+percentual = pd.value_counts(
+    pd.cut(
+        x = dados.Altura,
+        bins = classes,
+        labels = labels,
+        include_lowest = True
+    ), normalize = True
+) * 100
+
+dist_freq_altura = pd.DataFrame(
+    {'Frequência': frequencia, 'Porcentagem (%)': percentual}
+)
+
+dist_freq_altura.rename_axis('Estaturas', axis= 'columns', inplace = True)
+
+dist_freq_altura.sort_index(ascending = True, inplace = True)
+
+dist_freq_altura
+
 """## <font color=green>2.3 Distribuição de frequências para variáveis quantitativas (classes de amplitude fixa)</font>
 ***
 
@@ -344,7 +377,7 @@ dist_freq_quantitativas_personalizadas.sort_index(ascending = False)
 http://www.numpy.org/
 """
 
-
+import numpy as np
 
 """### Passo 1 - Difinindo o número de classes
 
@@ -353,21 +386,45 @@ http://www.numpy.org/
 # $$k = 1 + \frac {10}{3}\log_{10}n$$
 """
 
+n = dados.shape
+n
 
+n = dados.shape[0]
+n
 
+k = 1 + (10/3) * np.log10(n)
 
+k
 
-
-
-
+k = int(k.round(0))
+k
 
 """### Passo 2 - Criar a tabela de frequências"""
 
+frequencia = pd.value_counts(
+    pd.cut(
+        x = dados.Renda,
+        bins = 17,
+        include_lowest = True
+    ),
+    sort = False
+)
+frequencia
 
+percentual = pd.value_counts(
+    pd.cut(
+        x = dados.Renda,
+        bins = 17,
+        include_lowest = True
+    ),
+    sort = False,
+    normalize = True
+) * 100
+percentual
 
-
-
-
+dist_freq_quantitativas_amplitude_fixa = pd.DataFrame(
+    {'Frequência': frequencia, 'Porcentagem (%)': percentual})
+dist_freq_quantitativas_amplitude_fixa
 
 """## <font color=green>2.4 Histograma</font>
 ***
@@ -379,17 +436,31 @@ O <b>HISTOGRAMA</b> é a representação gráfica de uma distribuição de frequ
 https://seaborn.pydata.org/
 """
 
+import seaborn as sns
 
+ax = sns.distplot(dados.Altura, kde = False)
 
+ax.figure.set_size_inches(12, 6)
+ax.set_title('Distribuição de Frenquências - Altura', fontsize=18)
+ax.set_xlabel('Metros', fontsize=14)
+ax
 
+ax = sns.distplot(dados.Altura)
 
+ax.figure.set_size_inches(12, 6)
+ax.set_title('Distribuição de Frenquências - Altura - KDE', fontsize=18)
+ax.set_xlabel('Metros', fontsize=14)
+ax
 
+dados.Altura.hist(bins = 50, figsize=(12,6))
 
+dist_freq_quantitativas_personalizadas
 
-
-
-
-
+dist_freq_quantitativas_personalizadas['Frequência'].plot.bar(
+    width=1, 
+    color = 'blue',
+    alpha = 0.2,
+    figsize=(12,6))
 
 """# <font color=green>3 MEDIDAS DE TENDÊNCIA CENTRAL</font>
 ***
