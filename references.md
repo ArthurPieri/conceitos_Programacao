@@ -1,0 +1,23 @@
+# Referências
+- https://docs.npmjs.com
+- https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+- https://stackoverflow.com/questions/7190439/is-there-a-c-like-lambda-syntax-in-javascript
+- https://medium.com/@thejasonfile/es5-functions-vs-es6-fat-arrow-functions-864033baa1a
+- https://stackoverflow.com/questions/34361379/arrow-function-vs-function-declaration-expressions-are-they-equivalent-exch
+- https://en.wikipedia.org/wiki/Lodash
+- https://github.com/lodash/lodash
+- https://translate.google.com/
+- https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841
+- https://github.com/wycats/javascript-decorators
+- http://dealwithjs.io/design-patterns-decorating-in-javascript/
+- https://www.w3schools.com/js/js_validation_api.asp
+- https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
+- https://codeburst.io/throttling-and-debouncing-in-javascript-646d076d0a44
+- https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe
+- https://www.sitepoint.com/currying-in-functional-javascript/
+- https://www.sitepoint.com/trimming-strings-in-javascript/
+- https://gist.github.com/JoaoTiago/0724d2eb788f6382b39476e58d821300
+- https://www.w3schools.com/jsref/jsref_trim_string.asp
+- https://www.w3schools.com/js/js_if_else.asp
+

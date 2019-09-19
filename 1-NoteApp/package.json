@@ -1,0 +1,20 @@
+{
+  "name": "1-noteapp",
+  "version": "1.0.0",
+  "description": "Learning node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Arthur Pieri",
+    "email": "arthurpieri@gmail.com",
+    "url": "https://arthurpieri.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "yargs": "^11.0.0"
+  }
+}
