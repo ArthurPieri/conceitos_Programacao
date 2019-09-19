@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+    
+    function pulaLinha(){
+        document.write("<br><br>")
+    }
+
+    function mostra(frase){
+        document.write(frase)
+        pulaLinha()
+    }
+
+    let numeroPensado = Math.round(Math.random()*10)
+
+    let i = 0 
+    while(i < 3){
+        
+        let chute = parseInt(prompt("Digite seu chute!"))
+        
+        if(chute == numeroPensado){
+            alert("você ACERTOU")
+            mostra("você ACERTOU, o número pensado era " + numeroPensado)
+            break
+        }else{
+            mostra("Você errou! O número pensado foi " + numeroPensado)
+        }
+        
+        i++
+    }
+
+</script>
