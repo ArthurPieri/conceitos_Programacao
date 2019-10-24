@@ -8,3 +8,6 @@ Created on Thu Oct 24 17:42:26 2019
 
 a = 1
 b = 5
+
+import numpy as np
+np.max([3,5])
