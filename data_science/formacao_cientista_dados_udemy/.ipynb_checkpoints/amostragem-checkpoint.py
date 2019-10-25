@@ -6,8 +6,10 @@ Created on Thu Oct 24 17:42:26 2019
 @author: arthurpieri
 """
 
-a = 1
-b = 5
-
+import pandas as pd
 import numpy as np
-np.max([3,5])
+
+base = pd.read_csv('iris.csv')
+base
+
+base.shape
