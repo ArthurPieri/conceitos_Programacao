@@ -1,0 +1,14 @@
+# quantile() -> Para calcular os quartis
+# sd() -> Desvio Padrao
+# var() -> Variancia
+# mean() -> Média
+# median() -> Mediana
+
+jogadores <- c(40000, 18000, 12000, 250000, 30000, 140000, 300000, 40000, 800000)
+mean(jogadores)
+median(jogadores)
+quartis <- quantile(jogadores)
+quartis[4]
+sd(jogadores)
+# Apresenta um sumário das informações da variável
+summary(jogadores)
