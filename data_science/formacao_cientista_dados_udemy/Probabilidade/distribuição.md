@@ -11,7 +11,7 @@ Um gráfico de frequência mostra a quantidade de vezes que dado número se repe
 
 A amostra apresentada acima, ficaria com um gráfico mais ou menos assim:
 
-```
+```R
 4.______________
 3._____10_______
 2.___9_10_11____
@@ -76,7 +76,7 @@ Se eu jogar uma moeda 5 vezes. Qual a probabilidade de dar cara 3 vezes?
 - p = 0,5
 - n = 5
 
-```
+```R
 *Fórmula*
 f(x) = $\binom{n}{x}p^x(1-p)^{(n-x)}$
 
@@ -112,7 +112,7 @@ Se eu passar 4 sinais de quatro tempos cada. Qual a probabilidade de eu pegar: [
 - p = 0.25
 - n = 4
 
-```
+```R
 Resultados
 
 [0] = 0.316406 ou 31.64%
@@ -130,11 +130,102 @@ Se você fizer a prova de um concurso com 12 questões de múltipla escolha (4 a
 - p = 0,25
 - n = 12
 
-```
+```R
 Resultado: 0.01147127 ou 1.14%
 ```
 
 ### Tabela de Distribuição
 
-![tabela](./tabelaBinomial.png)
+![tabela](./images/tabelaBinomial.png)
 
+## Distribuição Normal
+
+É uma distribuição em que a média dos dados se encontram ao centro, ou seja você deve encontrar praticamente a mesma quantidade de dados acima e abaixo da média.
+
+![Normal](./images/Standard_deviation_diagram.png)
+
+*Outras características*:
+
+1. 68.2% dos dados estão a até 1 desvio padrão da média
+2. 27.2% dos dados estão entre 1 e 2 desvios padrão da média
+3. 4,2% dos dados estão entre 2 e 3 desvios padrão da média
+4. Acima de 3 desvios padrão da média apenas 0,4% dos dados
+5. Possui o formato de "Sino"
+
+### Teorema central do limite
+
+- Supondo que você jogo um dado 100 vezes e calcule a média;
+- repete esse processo mais 100 vezes sempre calculando a média.
+- Independente de como os dados do lançamentos estão dispostos a cada execução a média. A média dos lançamentos sempre estará próximo a uma distribuição normal.
+
+Ou colocando em termos mais complicados:
+
+- Conforme o tamanho da amostra aumenta, a distribuição das médias amostrais se aproxima cada vez mais da distribuição normal
+- Independente de como os dados estão distribuídos, suas médias estarão normalmente distribuídas
+
+*Nota*:
+
+- Graças ao teorema central do limite, você pode usar a distribuição normal para resolver diversos problemas, quando a distribuição dos dados é contínua.
+- Para outros casos, como quando a amostra é menor que 30 ou você não sabe o desvio padrão, você pode usar uma outra distribuição: t-student.
+
+### Exemplo
+
+![Exemplo_STD](./images/exSTD.png)
+
+### Distribuição Normal Padrão [Z]
+
+1. Mostra o número de desvios padrões que o valor está acima ou abaixo da média (score z ou valor z)
+2. Média Zero
+3. Desvio Padrão 1
+4. Usa-se uma fórmula para calcular a probabilidade de seus dados com relação a tabela Z :
+    **$Z = \frac{X - \mu}{\sigma}$**
+5. Serve para fazer um de-para da sua distribuição para a Distribuição Normal Padrão. Ou seja, Normalizar a sua distribuição e simplificar os dados.
+6. Após os dados padronizados, podemos usar uma tabela Z para o calculo das probabilidades na sua distribuiçãos.
+
+### Probabilidade Cumulativa
+
+Acontece quando a probabilidade se acumula da esquerda para a direita, por exemplo:
+
+- Pra você calcular a probabilidade de calcular um objeto em uma distribuição
+
+### Exemplo Distribuição Normal
+
+- Existe um conjunto de objetos em uma cesta, cujos pesos são normalmente distribuidos com média = 8 e desvio padrão igual a 2.
+- Qual a chance de se tirar um objeto pesando menos de 6 quilos?
+
+![Exemplo_normal](./images/exstd2.png)
+
+1. Primeiro devemos calcular o Z conforme a função apresentada anteriormente:
+    $Z = \frac{X - \mu}{\sigma}$
+    onde:
+    - X = ?
+    - $\mu$ = média
+    - $\sigma$ = Desvio Padrão
+    -> $Z = \frac{6 - 8}{2}$
+    -> $Z = - 1$
+2. Olhamos na tabela Z a probabilidade para $Z = -1$
+    ![Tabela_Z](./images/ztable.png)
+    *No foco*:
+    ![zmenosum](./images/zmenosum.png)
+3. Logo a probabilidade é de 0.1587 ou 15,87%
+
+### Exemplo Distribuição Normal 2
+
+- No mesmo conjunto de dados, qual a probabilidade de eu tirar um objeto pesando mais de 8 quilos?
+
+1. Se a média é 8 e a distribuição é normal podemos afirmar que a probabilidade é de 0.5 ou 50%, usando a própria definição de distribuição normal.
+
+### Exemplo Distribuição Normal 3
+
+- No mesmo conjunto de dados, qual a chance de tirar um objeto que tenha mais de 10 quilos?
+
+1. Novamente, devemos começar calculando o Z
+    $Z = \frac{X - \mu}{\sigma}$
+    $Z = 1$
+2. Porém como o calculo de probabilidade é cumulativo, da esquerda para a direita. Eu consulto novamente o valor de $Z=1$ na tabela.
+    ![zum](./images/zum.png)
+3. Este valor de 0.8413 nos mostra a probabilidade de retirar um objeto com peso entre 0 e 10 quilos. Porém queremos saber a probabilidade de o peso ser maior que 10 quilos. Para isso basta subtrair a probabilidade do total. ou:
+    $Prob\ Fracasso = 1 - P$
+    $P = 1 - 0.8413$
+    $P = 0.1587$ ou $15.87\%$
+4. Note que é a mesma probabilidade do teste anterior, quando buscamos objetos com 6 quilos. Isso acontece por que ambos os casos estão a 1 desvio padrão de distância da média.
