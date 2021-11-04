@@ -4,14 +4,14 @@ services:
   pgsql:
     image: postgres:alpine
     ports:
-      - '5432:5432'
-    container_name: 'pgsql'
+      - ${PG_PORTS}
+    container_name: ${PG_CONTAINER}
     restart: always
     volumes:
       - pg-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_USER: ${PG_USERNAME}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
 
   adminer:
     image: adminer
