@@ -28,3 +28,17 @@ npm install -g typescript ts-node
 ## API requests
 
 https://jsonplaceholder.typicode.com/todos/1
+
+## Learning
+
+Syntax + Features VS Design Patterns with TS
+
+### Basic Syntax
+
+1. Undestanding basic types in TS
+2. Function typing + annotations
+3. Type definition files
+4. Arrays in TS
+5. Modules systems
+6. Classes + Refreshener on OOP
+7. Projects -> Design Patterns

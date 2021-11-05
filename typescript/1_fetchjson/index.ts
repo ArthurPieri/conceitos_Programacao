@@ -19,11 +19,9 @@ axios.get(url).then(response => {
   // Testing some different notation
 
   const { id, title, completed} = todo
-  /*
-  const id = todo.id;
+  /* const id = todo.id;
   const title = todo.title;
-  const completed = todo.completed;
-  */
+  const completed = todo.completed;*/
 
   logTodo(id, title, completed);
 })
