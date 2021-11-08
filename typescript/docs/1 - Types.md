@@ -88,3 +88,17 @@ Typescript tries to figure out what type of value a variable refers to
 - Typescript tries to tell the type
 - If declaration and initialization of a variable are on the same line, typescript will figure out the type of that variable for us
 - We will rely on it a lot
+
+# Type Annotations and Inference for Functions
+
+## Type annotations for functions
+
+Code we add to tell typescript what type of arguments a function will receive and what type of values it will return
+
+## Type Inference for Functions
+
+Typescript tries to figure out what type of value a function will return.
+
+**Works only to the return value, not to the arguments.**
+
+# Anottations arround objects
