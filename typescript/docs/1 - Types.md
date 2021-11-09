@@ -102,3 +102,5 @@ Typescript tries to figure out what type of value a function will return.
 **Works only to the return value, not to the arguments.**
 
 # Anottations arround objects
+
+**A single value can have multiple different types**

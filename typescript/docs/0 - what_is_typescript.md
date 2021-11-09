@@ -25,6 +25,11 @@ Is Javascript with a Type system
 npm install -g typescript ts-node
 ```
 
+```js
+npm install -g parcel-bundler
+// it's used to run TS "directly" on the browser
+```
+
 ## API requests
 
 https://jsonplaceholder.typicode.com/todos/1
