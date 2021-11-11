@@ -154,3 +154,19 @@ In order to use DI, we need to:
 - Nest will then try to, automatically, create controller instances for us
 
 **When using Dependency Injection, it will create only one instance and pass it around the system**
+
+## DI inside of a single module
+
+"PowerModule" => PowerService -> Regulator Service
+
+1. Add the '@injectable()' decorator to powerServices
+2. Add the PowerService to the PowerModule's list of providers
+3. Define the constructor method on RegulatorService and add 'PowerService' to it
+
+## DI berween Modules
+
+"PowerModule" -> "CPUModule"
+
+1. Add PowerService to the PowerModule's list of 'exports'
+2. Import the PowerModule into s the CPUModule list of 'imports'
+3. Define the constructor method on CPUService and add 'PowerService' to it
