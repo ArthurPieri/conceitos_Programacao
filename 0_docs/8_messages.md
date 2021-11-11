@@ -92,3 +92,65 @@ GET http://localhost:3000/messages/123
 3. Body
    - {"content": "Well, hello there"}
      - @Body()
+
+## Services x Repositories
+
+| Services                                            | Repositories                                                          |
+| --------------------------------------------------- | --------------------------------------------------------------------- |
+| Its a class                                         | Its a class                                                           |
+| #1 place to put any business logic                  | #1 place to put storage-related logic                                 |
+| Uses one or more repositories to find or store data | Usually ends up bein a TypeORM entity, a mongoose schema, or similiar |
+
+**Frequently end up having very similiar method names!**
+
+| MessagesService        | MessageRepository       |
+| ---------------------- | ----------------------- |
+| findOne(id:string)     | findOne(id:string)      |
+| findAll()              | findAll()               |
+| create(message:string) | create(message: string) |
+
+They look identical but it can help you if we need to change the database, or access many types of data
+
+# Dependecy injections
+
+## Inversion of Control Principle
+
+Classes should not create instances of its own dependecies on its own
+
+- Bad: creates its own dependecy
+- Better: Receives its dependency
+- Good: Create a interface and recieve an object that satisfies the interface
+
+### Why the 'Good' case is good
+
+- In Production
+  - Will need to write to the disk, so can be a little slower
+- While Testing...
+  - We can create a Fake repository to run faster
+
+### Some issues with Inverion of Controle
+
+We need to write lots of codes to just start a single controller, as the application becomes more complex, inversion of control may be too complex. So we can user Dependency Injection
+
+## Dependency Injection
+
+Nest DI Container/Injector
+
+1. List of classes and their dependencies
+2. List of instances that I have created
+
+### Nest DI Container Flow
+
+1. At startup, register all classes with the container
+2. Container will figure out what each dependency each class has
+3. We then ask the container to create an instance of a class for us
+4. Container creates all required dependencies and gives us the instance
+5. Container will hold onto the created dependency instances and reuse them if needed
+
+In order to use DI, we need to:
+
+- Use the '@Injectable' decorator on each class;
+- add them to the modules list of providers;
+- Nest will then try to, automatically, create controller instances for us
+
+**When using Dependency Injection, it will create only one instance and pass it around the system**
