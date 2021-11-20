@@ -3,9 +3,24 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "asdf@asdf.com",
+  "email": "asdf1@asdf1.com",
   "password": "asdfghjkl"
 }
+
+### Sign in user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "asdf1@asdf1.com",
+  "password": "asdfghjkl"
+}
+
+### Get Current User
+GET http://localhost:3000/auth/whoami/
+
+### Sign OUT
+POST http://localhost:3000/auth/signout
 
 ### Create a new user (with error)
 POST http://localhost:3000/auth/signup
