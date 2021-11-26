@@ -31,7 +31,7 @@ export class User {
 
   @AfterUpdate()
   logUpdate() {
-    console.log('Updated uuser with id', this.id);
+    console.log('Updated user with id', this.id);
   }
 
   @AfterRemove()
