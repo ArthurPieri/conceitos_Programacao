@@ -3,13 +3,13 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-  "make": "toyota",
+  "make": "Ford",
   "model": "corolla",
   "mileage": 10000,
   "year": 1984,
   "lng": 0,
   "lat": 0,
-  "price": 50000,
+  "price": 6000,
   "id": 1
 }
 
