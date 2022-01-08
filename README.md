@@ -5,3 +5,11 @@ Concentrando todos os repositórios de programação em um único lugar para fac
 ## Course
 
 - https://www.udemy.com/course/nestjs-the-complete-developers-guide/
+
+## HTML, css and Js course
+
+- Alura
+
+## Vue Course
+
+- https://www.udemy.com/course/vue-js-completo/

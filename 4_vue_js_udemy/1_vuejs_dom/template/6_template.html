@@ -1,0 +1,30 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+  <!-- A diretiva v-once resolve apenas na primeira vez que o dom for criado -->
+  <p v-once>{{ titulo }}</p>
+  <!-- Retorno da chamada de metodos será convertido em string -->
+  <p>{{ saudacao() }}</p>
+  <!-- Para colocar o link do href do vue, devemos usar uma "diretiva"
+  v-bind faz com que o vue interprete o nome como a função  -->
+  <a v-bind:href="link">Google</a>
+  <hr>
+  <p v-html="linkHtml"></p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      titulo: "Usando VueJs 2!",
+      link: 'http://google.com.br',
+      linkHtml: '<a href="http://google.com">Google</a>'
+    },
+    methods: {
+      saudacao() {
+        return `${this.titulo = 'Bom dia!!'}`
+      }
+    }
+  })
+</script>
