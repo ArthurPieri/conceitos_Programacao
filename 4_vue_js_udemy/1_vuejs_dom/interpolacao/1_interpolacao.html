@@ -3,6 +3,8 @@
 
 <div id="app" >
   <p>{{ contador }}</p>
+  <!-- Possivel colocar expressões simples de uma linha-->
+  <p>{{ contador > 10 ? 'Maior do que 10' : 'Menor do que 10'}}</p>
   <!-- ao usar um parametro, podemos pedir o evento para o Vue usando $event -->
   <button v-on:click="somar(1)"> Somar </button>
   
