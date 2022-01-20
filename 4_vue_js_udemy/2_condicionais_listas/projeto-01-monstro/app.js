@@ -27,7 +27,7 @@ new Vue({
             this.playerLife = 0,
             this.monsterLife = 100
             this.msg = "Come abacate bem!"
-            this.registerLog("pra fazer coco bonito",  'monster')
+            this.registerLog("pra fazer coco bonito", 'healed')
         },
         attack(special) {
             this.hurt('monsterLife', 5, 10, special, 'jogador', 'Monstro', 'player')
@@ -63,7 +63,7 @@ new Vue({
         },
         playerLife() {
             if (this.playerLife == 0 && !this.quit)
-                this.msg = "Vencedores não usam drogas"
+                this.msg = "Vencedores não usam drogas!"
         },
         monsterLife() {
             if (this.monsterLife == 0)
